@@ -9,6 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*
+ * Author: Mike Bashkatov
+ * Date: 26/04/2019
+ * Name: Exersise 2
+ */
 namespace Exersise1
 {
     public partial class Form1 : Form
@@ -19,6 +24,8 @@ namespace Exersise1
         }
 
         ArrayList scoreArray = new ArrayList();
+
+        List<scoreStruct> findGrades = new List<scoreStruct>();
 
         public struct scoreStruct
         {
@@ -33,22 +40,27 @@ namespace Exersise1
             scoreStructure.number = 299;
             scoreStructure.grade = "F";
             scoreArray.Add(scoreStructure);
+            findGrades.Add(scoreStructure);
 
             scoreStructure.number = 349;
             scoreStructure.grade = "D";
             scoreArray.Add(scoreStructure);
+            findGrades.Add(scoreStructure);
 
             scoreStructure.number = 399;
             scoreStructure.grade = "C";
             scoreArray.Add(scoreStructure);
+            findGrades.Add(scoreStructure);
 
             scoreStructure.number = 449;
             scoreStructure.grade = "B";
             scoreArray.Add(scoreStructure);
+            findGrades.Add(scoreStructure);
 
             scoreStructure.number = 500;
             scoreStructure.grade = "A";
             scoreArray.Add(scoreStructure);
+            findGrades.Add(scoreStructure);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -75,6 +87,10 @@ namespace Exersise1
                     continue;
                 }
             }
+
+            scoreStruct foundGrade = findGrades.Where(g => g.number >= userNumber).FirstOrDefault();
+
+            MessageBox.Show($"Your grade is: {foundGrade.grade}");
         }
     }
 }
