@@ -24,12 +24,6 @@ namespace Exersise1
         {
             public int number;
             public string grade;
-
-            public scoreStruct(int number, string grade)
-            {
-                this.number = number;
-                this.grade = grade;
-            }
         }
 
         private scoreStruct scoreStructure;
@@ -52,7 +46,7 @@ namespace Exersise1
             scoreStructure.grade = "B";
             scoreArray.Add(scoreStructure);
 
-            scoreStructure.number = 459;
+            scoreStructure.number = 500;
             scoreStructure.grade = "A";
             scoreArray.Add(scoreStructure);
         }
